@@ -19,9 +19,9 @@ class CreateBillPaysTable extends Migration
             $table->date('date_due');
             $table->decimal('value');
             $table->boolean('done')->default(0);
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('category_id');
+            $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
